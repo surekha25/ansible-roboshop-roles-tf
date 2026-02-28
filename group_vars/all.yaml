@@ -1,0 +1,10 @@
+MONGODB_HOST: mongodb.surekhadevops.biz
+REDIS_HOST: redis.surekhadevops.biz
+CATALOGUE_HOST: catalogue.surekhadevops.biz
+CART_HOST: cart.surekhadevops.biz
+USER_HOST: user.surekhadevops.biz
+SHIPPING_HOST: shipping.surekhadevops.biz
+PAYMENT_HOST: payment.surekhadevops.biz
+MYSQL_HOST: mysql.surekhadevops.biz
+RABBITMQ_HOST: rabbitmq.surekhadevops.biz
+FRONTEND_HOST: frontend.surekhadevops.biz

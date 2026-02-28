@@ -1,0 +1,14 @@
+- name: app setup 
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: app-setup.yaml
+
+- name: NodeJs setup
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: python.yaml 
+
+- name: System setup
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: system_setup.yaml
