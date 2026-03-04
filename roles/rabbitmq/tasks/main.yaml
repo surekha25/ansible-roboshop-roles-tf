@@ -3,24 +3,43 @@
     src: rabbitmq.repo
     dest: /etc/yum.repos.d/rabbitmq.repo
 
+<<<<<<< HEAD
 - name: install rabbitmq server
+=======
+- name: install rabbitmq
+>>>>>>> f083818b4add734bcc3977b2abd360034cb412f6
   ansible.builtin.package:
     name: rabbitmq-server
     state: present
 
+<<<<<<< HEAD
 - name: start and enable rabbitmq server
+=======
+- name: start and enable rabbitmq
+>>>>>>> f083818b4add734bcc3977b2abd360034cb412f6
   ansible.builtin.service:
     name: rabbitmq-server
     state: started
     enabled: yes
 
+<<<<<<< HEAD
 - name: create and provide permissions to user
+=======
+- name: add user to server
+>>>>>>> f083818b4add734bcc3977b2abd360034cb412f6
   community.rabbitmq.rabbitmq_user:
     user: roboshop
     password: roboshop123
     permissions:
+<<<<<<< HEAD
       - vhost: /
         configure_priv: .*
         read_priv: .*
         write_priv: .*
+=======
+    - vhost: /
+      configure_priv: .*
+      read_priv: .*
+      write_priv: .*
+>>>>>>> f083818b4add734bcc3977b2abd360034cb412f6
     state: present

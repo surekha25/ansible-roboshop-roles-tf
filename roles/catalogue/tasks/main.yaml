@@ -5,9 +5,14 @@
   tags:
   - deployment
 
+<<<<<<< HEAD
 - name: nodejs setup
   #ansible.builtin.import_role:
   ansible.builtin.include_role:
+=======
+- name: NodeJs setup
+  ansible.builtin.import_role:
+>>>>>>> f083818b4add734bcc3977b2abd360034cb412f6
     name: common
     tasks_from: nodejs.yaml
   tags:
@@ -27,6 +32,7 @@
   ansible.builtin.command: mongosh {{ MONGODB_HOST }} --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')"
   register: catalogue_output
 
+<<<<<<< HEAD
 - name: load products into mongodb
   ansible.builtin.shell: mongosh --host {{ MONGODB_HOST }} </app/db/master-data.js
   when: catalogue_output.stdout | int < 0
@@ -35,5 +41,15 @@
   ansible.builtin.import_role:
     name: common
     tasks_from: system-setup.yaml
+=======
+- name: load products into mondodb
+  ansible.builtin.shell: mongosh --host {{ MONGODB_HOST }} </app/db/master-data.js
+  when: catalogue_output.stdout | int < 0
+
+- name: System setup
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: system_setup.yaml
+>>>>>>> f083818b4add734bcc3977b2abd360034cb412f6
   tags:
   - deployment

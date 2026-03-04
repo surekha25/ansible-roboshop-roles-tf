@@ -1,5 +1,10 @@
 - name: restart nginx
   ansible.builtin.service:
     name: nginx
+<<<<<<< HEAD
     state: restarted # restarted if you have already started earlier
     enabled: yes
+=======
+    enabled: yes
+    state: restarted
+>>>>>>> f083818b4add734bcc3977b2abd360034cb412f6

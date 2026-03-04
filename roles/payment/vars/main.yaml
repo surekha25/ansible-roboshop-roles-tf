@@ -1,2 +1,6 @@
 RABBITMQ_USER: roboshop
+<<<<<<< HEAD
 RABBITMQ_PASS: roboshop123
+=======
+RABBITMQ_PASSWORD: roboshop123
+>>>>>>> f083818b4add734bcc3977b2abd360034cb412f6

@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 - name: disable default nodejs
   ansible.builtin.command: dnf module disable nodejs -y
 
 - name: enable nodejs 20
+=======
+- name: disable node js 
+  ansible.builtin.command: dnf module disable nodejs -y
+
+- name: enable node js
+>>>>>>> f083818b4add734bcc3977b2abd360034cb412f6
   ansible.builtin.command: dnf module enable nodejs:20 -y
 
 - name: install nodejs
@@ -9,9 +16,15 @@
     name: nodejs
     state: present
 
+<<<<<<< HEAD
 - name: install dependencies
   community.general.npm:
     path: /app
   tags:
   - deployment
 
+=======
+- name: npm install
+  community.general.npm:
+    path: /app
+>>>>>>> f083818b4add734bcc3977b2abd360034cb412f6

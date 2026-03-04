@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 - name: install mysql server
+=======
+- name: install mysql
+>>>>>>> f083818b4add734bcc3977b2abd360034cb412f6
   ansible.builtin.package:
     name: mysql-server
     state: present
@@ -9,6 +13,7 @@
     state: started
     enabled: yes
 
+<<<<<<< HEAD
 - name: install mysql python libraries
   ansible.builtin.pip:
     executable: pip3.9
@@ -18,4 +23,7 @@
   - boto3
 
 - name: setup root password
+=======
+- name: set root password
+>>>>>>> f083818b4add734bcc3977b2abd360034cb412f6
   ansible.builtin.command: mysql_secure_installation --set-root-pass {{ MYSQL_ROOT_PASSWORD }}
