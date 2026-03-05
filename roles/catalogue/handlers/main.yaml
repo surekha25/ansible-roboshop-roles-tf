@@ -1,8 +1,4 @@
 - name: daemon reload
-<<<<<<< HEAD
   # systemctl daemon-reload
   ansible.builtin.systemd_service:
-=======
-  ansible.builtin.systemd_service:    
->>>>>>> f083818b4add734bcc3977b2abd360034cb412f6
     daemon_reload: true

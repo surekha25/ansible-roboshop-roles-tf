@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 - name: install python package
-=======
-- name: Install python package
->>>>>>> f083818b4add734bcc3977b2abd360034cb412f6
   ansible.builtin.dnf:
     name: "{{ item }}"
     state: present

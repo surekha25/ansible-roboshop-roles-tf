@@ -1,37 +1,20 @@
-<<<<<<< HEAD
 - name: app setup
-=======
-- name: app setup 
->>>>>>> f083818b4add734bcc3977b2abd360034cb412f6
   ansible.builtin.import_role:
     name: common
     tasks_from: app-setup.yaml
 
-<<<<<<< HEAD
 - name: app setup
   ansible.builtin.import_role:
     name: common
     tasks_from: java.yaml
 
-=======
-- name: NodeJs setup
-  ansible.builtin.import_role:
-    name: common
-    tasks_from: java_setup.yaml
-    
->>>>>>> f083818b4add734bcc3977b2abd360034cb412f6
 - name: install mysql python libraries
   ansible.builtin.pip:
     executable: pip3.9
     name: "{{ item }}"
   loop:
-<<<<<<< HEAD
   - cryptography
   - PyMySQL
-=======
-  - PyMySQL
-  - cryptography
->>>>>>> f083818b4add734bcc3977b2abd360034cb412f6
 
 - name: import shipping data into mysql
   community.mysql.mysql_db:
@@ -43,7 +26,6 @@
     target: "{{ item }}"
   loop:
   - /app/db/schema.sql
-<<<<<<< HEAD
   - /app/db/app-user.sql 
   - /app/db/master-data.sql
 
@@ -51,12 +33,3 @@
   ansible.builtin.import_role:
     name: common
     tasks_from: system-setup.yaml
-=======
-  - /app/db/app-user.sql
-  - /app/db/master-data.sql
-
-- name: System setup
-  ansible.builtin.import_role:
-    name: common
-    tasks_from: system_setup.yaml
->>>>>>> f083818b4add734bcc3977b2abd360034cb412f6
