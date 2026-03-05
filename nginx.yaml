@@ -1,8 +1,0 @@
-- name: install nginx
-  hosts: dynamic_frontend
-  become: yes
-  tasks:
-  - name: Install nginx into dynamic inventory frontend servers
-    ansible.builtin.dnf:
-      name: nginx
-      state: present
