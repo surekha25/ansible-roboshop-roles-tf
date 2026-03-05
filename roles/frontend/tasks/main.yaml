@@ -1,14 +1,7 @@
-<<<<<<< HEAD
 - name: disable default nginx
   ansible.builtin.command: dnf module disable nginx -y
 
 - name: enable nginx 1.24
-=======
-- name: disable nginx
-  ansible.builtin.command: dnf module disable nginx -y
-
-- name: enable nginx:1.24
->>>>>>> f083818b4add734bcc3977b2abd360034cb412f6
   ansible.builtin.command: dnf module enable nginx:1.24 -y
 
 - name: install nginx
@@ -18,7 +11,6 @@
 
 - name: remove html directory
   ansible.builtin.file:
-<<<<<<< HEAD
     state: absent
     path: /usr/share/nginx/html/
 
@@ -28,27 +20,10 @@
     state: directory
 
 - name: download frontend application
-=======
-    path: /usr/share/nginx/html
-    state: absent
-
-- name: create html directory
-  ansible.builtin.file:
-    path: /usr/share/nginx/html
-    state: directory
-
-- name: remove frontend files if exist
-  ansible.builtin.file:
-    path: /tmp/frontend.zip
-    state: absent
-
-- name: download frontend file
->>>>>>> f083818b4add734bcc3977b2abd360034cb412f6
   ansible.builtin.get_url:
     url: https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip
     dest: /tmp/frontend.zip
 
-<<<<<<< HEAD
 - name: extract frontend application
   ansible.builtin.unarchive:
     src: /tmp/frontend.zip
@@ -59,18 +34,6 @@
   ansible.builtin.file:
     state: absent
     path: /etc/nginx/nginx.conf
-=======
-- name: unarchive frontend files
-  ansible.builtin.unarchive:
-    src: /tmp/frontend.zip
-    dest: /usr/share/nginx/html
-    remote_src: yes
-
-- name: remove nginx conf if exit
-  ansible.builtin.file:
-    path: /etc/nginx/nginx.conf
-    state: absent
->>>>>>> f083818b4add734bcc3977b2abd360034cb412f6
 
 - name: copy nginx conf
   ansible.builtin.template:
