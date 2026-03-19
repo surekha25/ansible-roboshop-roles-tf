@@ -21,8 +21,8 @@
     state: import
     name: all
     login_host: "{{ MYSQL_HOST }}"
-    login_user: "{{ MYSQL_ROOT_USER }}"
-    login_password: "{{ MYSQL_ROOT_PASSWORD }}"
+    login_user: root
+    login_password: RoboShop@1
     target: "{{ item }}"
   loop:
   - /app/db/schema.sql
